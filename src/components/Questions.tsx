@@ -18,8 +18,8 @@ const Questions: React.FC<QuestionsProps> = (props: QuestionsProps) => {
       <p dangerouslySetInnerHTML={{ __html: props.question }} />
       <div>
         {props.answers.map((answer) => (
-          <div>
-            <button disabled={props.userAnswer} onClick={props.callback}>
+          <div key={answer}>
+            <button disabled={props.userAnswer} value={answer} onClick={props.callback}>
               <span dangerouslySetInnerHTML={{ __html: answer }} />
             </button>
           </div>
