@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Questions from '../components/Questions';
 import { AnswerObject, fetchQuizQuestions } from '../API';
 import { QuestionState, Difficulty } from '../API';
+import { FiRefreshCcw } from 'react-icons/fi';
+import { IconContext } from 'react-icons';
 
 const TOTAL_QUESTIONS = 10;
 
@@ -79,7 +81,7 @@ function Quiz() {
         </span>{' '}
         Quiz{' '}
       </h1>
-      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+      {gameOver ? (
         <button
           className='flex self-center p-1  mb-2 mr-2 mt-40 px-6
       overflow-hidden text-sm font-medium text-gray-900 rounded-lg 
@@ -88,11 +90,13 @@ function Quiz() {
        focus:outline-none focus:ring-green-200 dark:focus:ring-green-800'
           onClick={startTrivia}
         >
-          <span className='relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
+          <span className='relative px-5 py-2.5 transition-all ease-in duration-75 bg-white
+           dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
             Start{' '}
           </span>
         </button>
       ) : null}
+      {/* || userAnswers.length === TOTAL_QUESTIONS */}
 
       {!gameOver ? (
         <h4 className='flex text-2xl mt-4 py-2 font-bold text-black'>
@@ -143,7 +147,7 @@ function Quiz() {
       userAnswers.length === number + 1 &&
       number !== TOTAL_QUESTIONS - 1 ? (
         <button
-          className='relative inline-flex items-center justify-center p-1 mt-4 px-8
+          className='relative inline-flex items-center justify-center p-0 sm:mt-2 px-8
       overflow-hidden text-sm font-medium text-gray-900 rounded-lg 
       group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400
        group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none
@@ -152,6 +156,27 @@ function Quiz() {
         >
           <span className='relative px-2 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
             Next Quest{' '}
+          </span>
+        </button>
+      ) : null}
+      {userAnswers.length === TOTAL_QUESTIONS? (
+        <button
+          className='flex self-center p-1  mb-2 mr-2 px-8
+      overflow-hidden text-sm font-medium text-gray-900 rounded-lg 
+      group bg-gradient-to-br from-red-400 to-blue-600 group-hover:from-green-400
+       group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 
+       focus:outline-none focus:ring-green-200 dark:focus:ring-green-800'
+          onClick={startTrivia}
+        >
+          <span
+            className='relative px-5 py-2.5 transition-all ease-in duration-75 bg-white
+           dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'
+          >
+            <IconContext.Provider
+              value={{ size: '25', className: 'global-class-name' }}
+            >
+              <FiRefreshCcw />
+            </IconContext.Provider>
           </span>
         </button>
       ) : null}

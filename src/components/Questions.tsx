@@ -18,7 +18,7 @@ const Questions: React.FC<QuestionsProps> = (props: QuestionsProps) => {
         {props.questionNr >= 2 ? (
           <span
             className='mx-2 bg-gray-100 text-emerald-600 text-sm font-semibold inline-flex 
-        items-center p-1.5 rounded-full mr-2 dark:bg-emerald-600 dark:text-gray-300'
+        items-center p-1.5 rounded-full mr-2 dark:bg-emerald-500 dark:text-gray-300'
           >
             <svg
               aria-hidden='true'
