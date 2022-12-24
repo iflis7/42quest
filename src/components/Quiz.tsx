@@ -67,7 +67,7 @@ function Quiz() {
     <div
       className='flex flex-col items-center mx-auto p-4 bg-white border border-gray-500 
       rounded-md w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12 
-      shadow-md shadow-yellow-500 h-2/3 sm:p-6 md:p-8'
+      shadow-md shadow-yellow-500 h-3/4 sm:p-6 md:p-8'
     >
       <h1
         className='m-2 text-3xl font-extrabold text-gray-900 dark:text-black 
