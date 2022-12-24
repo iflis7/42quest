@@ -12,8 +12,8 @@ type QuestionsProps = {
 
 const Questions: React.FC<QuestionsProps> = (props: QuestionsProps) => {
   return (
-    <div className='flex flex-col items-center mb-6'>
-      <p className='text-lg font-medium p-2 my-2 '>
+    <div className='flex flex-col items-center mb-2'>
+      <p className='text-lg font-medium p-2 my-1 '>
         Question: {props.questionNr} / {props.totalQuestions}
         {props.questionNr >= 2 ? (
           <span
@@ -37,7 +37,7 @@ const Questions: React.FC<QuestionsProps> = (props: QuestionsProps) => {
           </span>
         ) : null}
       </p>
-      <p className="font-semibold p-4 text-lg" dangerouslySetInnerHTML={{ __html: props.question }} />
+      <p className="font-semibold pb-2 text-lg" dangerouslySetInnerHTML={{ __html: props.question }} />
       <div >
         {props.answers.map((answer) => (
           <div className="font-medium my-1.5 p-1 px-4 rounded-md
